@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section><div class="container">
+<section class='row-margin'><div class="container">
     <hr>
     <div class="row">
         <div class="col-md-3"><img src="<?php bloginfo('template_url');?>/assets/img/director.jpg" alt="">

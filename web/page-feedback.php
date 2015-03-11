@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="feedback-section">
+<section class="feedback-section row-margin">
     <div class="container">
         <hr>
         <h1 class="red-title section-title">What people say about us</h1>
