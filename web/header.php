@@ -1,79 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<?php
+/**
+ * The Header for our theme
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fourteen
+ * @since Twenty Fourteen 1.0
+ */
+?><!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <?php wp_head(); ?>
-    <title>Test</title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width">
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<!--[if lt IE 9]>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+	<![endif]-->
+	<?php wp_head(); ?>
 </head>
 
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <nav class="site-nav">
-            <div class="container">
-                <ul id="menu-topnav" class="topnav">
-                    <li class="menu-item">
-                        <a href="#">
+<body <?php body_class(); ?>>
+<div id="page" class="hfeed site">
+	<?php if ( get_header_image() ) : ?>
+	<div id="site-header">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+		</a>
+	</div>
+	<?php endif; ?>
 
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">About Us</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Service</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Schools</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Feedback</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#">Contacts</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="site-header-info">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class=" site-logo">
-                            <a href="#"></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-offset-2">
-                        <div class="lang-menu">
-                            <span class="lang-label col-lg-offset-6">Choose a language:</span>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-                            <a href="#" class="lang-item active">ENG</a>
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+			</div>
 
-                            <a href="#" class="lang-item ">RUS</a>
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></button>
+				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			</nav>
+		</div>
 
-                            </ul>
-                        </div>
-                        <div class="contacts-menu">
-                            <table>
-                                <tr>
-                                    <td>Contact us in:</td>
-                                    <td>Canada</td>
-                                    <td>+1 403 929 23 28</td>
-                                    <td>Russia</td>
-                                    <td>+7 921 304 55 14
-                                        <br>+8 985 141-1936</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- End header -->
-    <!-- Main -->
-    <main role="main">
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	<div id="main" class="site-main">

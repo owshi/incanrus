@@ -1,95 +1,61 @@
-<?php get_header(); ?>
-<div class="site-slider">
-            <div class="container">
-                <div class="slider-body">
-                    <div class="slide active">
-                        <a href="#">
-                            <h1 class="slide-title">Assistance with organizing immigration documents to Canada and the United States.</h1>
-                        </a>
-                        <img src="assets/img/slide1.jpg" alt="">
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme and one
+ * of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query,
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fourteen
+ * @since Twenty Fourteen 1.0
+ */
 
-                    </div>
-                    <div class="slide">
-                        <a href="#">
-                            <h1 class="slide-title"></h1>
-                        </a>
-                        <img src="assets/img/slide1.jpg" alt="">
+get_header(); ?>
 
-                    </div>
-                    <div class="slide">
-                        <a href="#">
-                            <h1 class="slide-title"></h1>
-                        </a>
-                        <img src="assets/img/slide1.jpg" alt="">
+<div id="main-content" class="main-content">
 
-                    </div>
-                </div>
-                <ul class="site-slider-pagination">
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </div>
-        <section class="welcome-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="welcome-title section-title">Welcome to INCANRUS</h2>
-                        <p>Incanrus is an official certfied represantative of all institutions around the world with whom we have a partnership.</p>
-                        <p>Interstudy Canrus — is a professional Canadian-Russian Agency, provided services in training and volunteering all over the world for scholars, students,groups,corporate clients and private individuals.We only work with the best and prestigious educational instituons in the global education market.
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <figure class="welcome-image">
-                            <a href="#"><img src="assets/img/welcome.jpg" alt="">
-                            </a>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="shortly-about-us">
-            <div class="container">
-                <h2 class="about-us-title section-title">Shortly about us</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <article class="about-article clearfix">
-                            <div class="col-sm-6">
-                                <figure class="about-image">
-                                    <img src="assets/img/director.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="about-person ">
-                                    <hgroup class="about-title-group">
-                                        <h3>Elena Shportko</h3>
-                                        <h4>General director</h4>
-                                    </hgroup>
-                                    <p>Interstudy Canrus — is a professional Canadian-Russian Agency, provided services in training and volunteering all over the world for scholars, students,groups,corporate clients and private individuals.We only work with the best and prestigious educational instituons in the global education market.
-                                    </p>
-                                    <a href="" class="btn-view">More</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6">
-                        <article class="about-article clearfix">
-                            <div class="col-sm-6">
-                                <figure class="about-image"><img src="assets/img/codirector.jpg" alt="">
-                                </figure>
-                            </div>
-                            <div class="col-sm-6">
-                                <hgroup class="about-title-group">
-                                    <h3>Morgan Bell</h3>
-                                    <h4>Co director</h4>
-                                </hgroup>
-                                <p>Hello and welcome to Interstudy Canrus! Here we have an internationally experienced team that can help you with all your challenges when making that life changing leap to study abroad. A little bit about myself, I grew up in a small town in northern Alberta, Canada. </p>
-                                <a href="" class="btn-view">More</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-<?php get_footer(); ?>
+<?php
+	if ( is_front_page() && twentyfourteen_has_featured_posts() ) {
+		// Include the featured content template.
+		get_template_part( 'featured-content' );
+	}
+?>
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		<?php
+			if ( have_posts() ) :
+				// Start the Loop.
+				while ( have_posts() ) : the_post();
+
+					/*
+					 * Include the post format-specific template for the content. If you want to
+					 * use this in a child theme, then include a file called called content-___.php
+					 * (where ___ is the post format) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+
+				endwhile;
+				// Previous/next post navigation.
+				twentyfourteen_paging_nav();
+
+			else :
+				// If no content, include the "No posts found" template.
+				get_template_part( 'content', 'none' );
+
+			endif;
+		?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	<?php get_sidebar( 'content' ); ?>
+</div><!-- #main-content -->
+
+<?php
+get_sidebar();
+get_footer();
