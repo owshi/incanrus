@@ -1,0 +1,127 @@
+.site-footer {
+    background-color: @grey;
+    color: #fff;
+    .menu-item {
+        margin-bottom: 10px;
+        a {
+            position: relative;
+            padding-left: 20px;
+            font-size: 24px;
+            letter-spacing: .1em;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 8px;
+                height: 14px;
+                top: 3px;
+                left: 0;
+                background-image: url(assets/img/soc-sprite.png);
+                background-position: -82px -31px;
+            }
+            &:hover:before {
+                background-position: -91px -31px;
+            }
+        }
+    }
+    a {
+        color: @red;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+.copyright {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #51576a;
+    text-align: right;
+    font-size: 14px;
+}
+.footer-col-title {
+    text-transform: uppercase;
+    margin: 30px 0 20px;
+    color: #b5b5b5;
+    font-size: 30px;
+}
+tel table td {
+    line-height: 1.5;
+    padding: 0 5px;
+}
+tel, .mailto, .address {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    color: #b5b5b5;
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url(assets/img/soc-sprite.png);
+        left:0;
+        top: 0
+    }
+}
+.mailto {
+    &:before {
+        width: 18px;
+        height: 15px;
+        background-position: -82px -15px;
+    }
+}
+tel {
+    &:before {
+        width: 15px;
+        height: 14px;
+        background-position: -82px 0;
+    }
+}
+.address {
+    max-width: 250px;
+    &:before {
+        height: 15px;
+        width: 12px;
+        background-position: -82px -46px;
+    }
+}
+.footer-contacts {
+    tel, .mailto {
+        color: @red;
+        margin-left: 25px;
+    }
+}
+.footer-social {
+    a {
+        display: block;
+        position: relative;
+        font-family: "Myriad Pro";
+        padding: 10px 0 10px 60px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #fff;
+        &:hover {
+            color: #ccc;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-image: url(assets/img/soc-sprite.png);
+            top: 0;
+            left: 0;
+        }
+        &.facebook:before {
+            background-position: -41px 0;
+        }
+        &.facebook:hover:before {
+            background-position: 0 0;
+        }
+        &.google-plus:before {
+            background-position: -41px -41px;
+        }
+        &.google-plus:hover:before {
+            background-position: 0 -41px;
+        }
+    }
+}

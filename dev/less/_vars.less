@@ -1,0 +1,66 @@
+@red: #e74c3c;
+@red-hvr: #d50000;
+@grey: #333745;
+@grey-hvr: #51576a;
+@lgt-grey: #c1c1c1;
+
+.transition(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -ms-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition
+}
+.appearance-none() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+.box-shadow(@shadow...) {
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    -ms-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
+.transform(@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+.animation(@animation) {
+    -webkit-animation: @animation;
+    -moz-animation: @animation;
+    -ms-animation: @animation;
+    -o-animation: @animation;
+    animation: @animation;
+}
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.absolute-center() {
+    top: 50%;
+    left: 50%;
+    .transform(translateX(-50%) translateY(-50%));
+}
+.top-center() {
+    top: 50%;
+    .transform(translateY(-50%));
+}
+.left-center() {
+    left: 50%;
+    .transform(translateX(-50%));
+}
+.linear-gradient(@from, @to) {
+    background: -moz-linear-gradient(@from, @to);
+    background: -webkit-linear-gradient(@from, @to);
+    background: -ms-linear-gradient(@from, @to);
+    background: -o-linear-gradient(@from, @to);
+    background: linear-gradient(@from, @to);
+}
