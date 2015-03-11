@@ -14,12 +14,12 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img src="assets/img/feedback3.jpg" alt="">
+                <img src="<?php bloginfo('template_url');?>/assets/img/feedback3.jpg" alt="">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src="assets/img/feedback2.jpg" alt="">
+                <img src="<?php bloginfo('template_url');?>/assets/img/feedback2.jpg" alt="">
             </div>
             <div class="col-md-8">
                 <div class="feedback-entry">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img src="assets/img/feedback1.jpg" alt="">
+                <img src="<?php bloginfo('template_url');?>/assets/img/feedback1.jpg" alt="">
             </div>
         </div>
     </div>

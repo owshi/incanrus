@@ -2,7 +2,7 @@
 <section><div class="container">
     <hr>
     <div class="row">
-        <div class="col-md-3"><img src="assets/img/director.jpg" alt="">
+        <div class="col-md-3"><img src="<?php bloginfo('template_url');?>/assets/img/director.jpg" alt="">
         </div>
         <div class="col-md-9">
             <hgroup class="person-title-group">
@@ -23,7 +23,7 @@
             </p>
             <p>Finance Professor at a joint Canadian-Chinese University in Changchun, China. The Asian teaching experience is like none other, and I formed great friendships and relationships with the local and international teachers alike. It was however, interacting with the students that I enjoyed most, as it only felt like yesterday that I was in the same position that they were. After China, life took me to Central America where I was Director of Language Programs for an Educational Language institution that also organized Volunteer Programs tailored for International Volunteers. It was after this quick 10 years of my life that we decided to dedicate ourselves to help people discover the endless adverture that is international education. I have studied over 5 languages in my life and thrive in international settings. I hope I can help you do the same and persue your goals! ​Morgan Bell </p>
         </div>
-        <div class="col-md-3"><img src="assets/img/codirector.jpg" alt="">
+        <div class="col-md-3"><img src="<?php bloginfo('template_url');?>/assets/img/codirector.jpg" alt="">
         </div>
     </div>
 
